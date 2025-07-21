@@ -18,6 +18,14 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+seeds:
+  ecommerce_analytics:  
+    database: stage         # ✅ overrides profile db
+    schema: ecommerce      # ✅ overrides profile schema
+    quote_columns: false
+
+
+
 models:
   ecommerce_analytics:
     +materialized: view
